@@ -6,9 +6,9 @@ block content
   form(method='POST')
     div.form-group
       label(for='first_name') 開発元/開発者:
-      input#first_name.form-control(type='text', placeholder='First name (Christian)' name='first_name' required value=(undefined===author ? '' : author.first_name) )
+      input#first_name.form-control(type='text', placeholder='開発元/開発者' name='first_name' required value=(undefined===author ? '' : author.first_name) )
       label(for='family_name') プロデューサー:
-      input#family_name.form-control(type='text', placeholder='Family name (Surname)' name='family_name' required value=(undefined===author ? '' : author.family_name))
+      input#family_name.form-control(type='text', placeholder='プロデューサー' name='family_name' required value=(undefined===author ? '' : author.family_name))
     div.form-group
       label(for='date_of_birth') 創立日:
       input#date_of_birth.form-control(type='date', name='date_of_birth' value=(undefined===author ? '' : author.date_of_birth_yyyy_mm_dd) )

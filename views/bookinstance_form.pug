@@ -7,7 +7,7 @@ block content
     div.form-group
       label(for='book') ゲームタイトル:
       select#book.form-control(name='book' required)
-        option(value='') --Please select a book--
+        option(value='') --ゲームを選んでください--
         for book in book_list
           if selected_book==book._id.toString()
             option(value=book._id, selected) #{book.title}
@@ -16,22 +16,22 @@ block content
 
     div.form-group
       label(for='imprint') メモ:
-      input#imprint.form-control(type='text' placeholder='Publisher and date information' name='imprint' required value=(undefined===bookinstance ? '' : bookinstance.imprint) )
+      input#imprint.form-control(type='text' placeholder='メモ' name='imprint' required value=(undefined===bookinstance ? '' : bookinstance.imprint) )
     div.form-group
-      label(for='due_back') Date when book available:
+      label(for='due_back') 登録日:
       input#due_back.form-control(type='date' name='due_back' value=(undefined===bookinstance ? '' : bookinstance.due_back_yyyy_mm_dd))
 
     div.form-group
       label(for='status') 進捗:
       select#status.form-control(name='status' required)
-        option(value='') --Please select a status--
+        option(value='') --進捗状況を選んでください--
         each val in ['Maintenance', 'Available', 'Loaned', 'Reserved']
           if undefined===bookinstance || bookinstance.status!=val 
             option(value=val)= val
           else
             option(value=val selected)= val
 
-    button.btn.btn-primary(type='submit') Submit
+    button.btn.btn-primary(type='submit') 登録
 
   if errors
     ul
