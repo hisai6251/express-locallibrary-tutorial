@@ -9,7 +9,7 @@ exports.bookinstance_list = asyncHandler(async (req, res, next) => {
   const allBookInstances = await BookInstance.find().populate("book").exec();
 
   res.render("bookinstance_list", {
-    title: "Book Instance List",
+    title: "進捗一覧",
     bookinstance_list: allBookInstances,
   });
 });

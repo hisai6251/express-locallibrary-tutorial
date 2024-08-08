@@ -90,20 +90,20 @@ async function bookInstanceCreate(index, book, imprint, due_back, status) {
 async function createGenres() {
   console.log("Adding genres");
   await Promise.all([
-    genreCreate(0, "Fantasy"),
-    genreCreate(1, "Science Fiction"),
-    genreCreate(2, "French Poetry"),
+    genreCreate(0, "シューティング"),
+    genreCreate(1, "RPG"),
+    genreCreate(2, "フリーホラー"),
   ]);
 }
 
 async function createAuthors() {
   console.log("Adding authors");
   await Promise.all([
-    authorCreate(0, "Patrick", "Rothfuss", "1973-06-06", false),
-    authorCreate(1, "Ben", "Bova", "1932-11-8", false),
-    authorCreate(2, "Isaac", "Asimov", "1920-01-02", "1992-04-06"),
-    authorCreate(3, "Bob", "Billings", false, false),
-    authorCreate(4, "Jim", "Jones", "1971-12-16", false),
+    authorCreate(0, "TobyFox", "TobyFox", "1991-10-11", false),
+    authorCreate(1, "上海アリス幻樂団", "ZUN", "1932-11-8", false),
+    //authorCreate(2, "Isaac", "Asimov", "1920-01-02", "1992-04-06"),
+    //authorCreate(3, "Bob", "Billings", false, false),
+    //authorCreate(4, "Jim", "Jones", "1971-12-16", false),
   ]);
 }
 
@@ -112,21 +112,21 @@ async function createBooks() {
   await Promise.all([
     bookCreate(
       0,
-      "The Name of the Wind (The Kingkiller Chronicle, #1)",
-      "I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life. I was expelled from the University at a younger age than most people are allowed in. I tread paths by moonlight that others fear to speak of during day. I have talked to Gods, loved women, and written songs that make the minstrels weep.",
-      "9781473211896",
+      "UNDERTALE",
+      "NPクリアした後のGはつらいな",
+      "2015",
       authors[0],
-      [genres[0]]
+      [genres[1]]
     ),
     bookCreate(
       1,
-      "The Wise Man's Fear (The Kingkiller Chronicle, #2)",
-      "Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.",
-      "9788401352836",
-      authors[0],
+      "東方紺珠伝",
+      "まさにルナティック",
+      "2015",
+      authors[1],
       [genres[0]]
     ),
-    bookCreate(
+    /*bookCreate(
       2,
       "The Slow Regard of Silent Things (Kingkiller Chronicle)",
       "Deep below the University, there is a dark place. Few people know of it: a broken web of ancient passageways and abandoned rooms. A young woman lives there, tucked among the sprawling tunnels of the Underthing, snug in the heart of this forgotten place.",
@@ -165,7 +165,7 @@ async function createBooks() {
       "ISBN222222",
       authors[4],
       false
-    ),
+    ),*/
   ]);
 }
 
